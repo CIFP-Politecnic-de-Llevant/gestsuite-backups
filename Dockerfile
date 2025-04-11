@@ -23,7 +23,7 @@ WORKDIR /resources
 COPY /api/gestsuite-backups .
 RUN mvn clean package -f pom.xml
 
-FROM amazoncorretto:17-alpine-jdk as production-stage-backups
+FROM maven:3-amazoncorretto-17 as production-stage-backups
 
 RUN yum install -y https://dev.mysql.com/get/mysql80-community-release-el7-7.noarch.rpm && \
     yum install -y --nogpgcheck mysql-community-client && \
