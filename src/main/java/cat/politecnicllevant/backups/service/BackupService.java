@@ -30,8 +30,8 @@ public class BackupService {
     private final ConvalidacionsRestClient convalidacionsRestClient;
     private final ProfessoratManagerRestClient professoratManagerRestClient;
 
-//    @Scheduled(fixedRate = 60000)  // Cada minut
-    @Scheduled(cron = "0 0 23 * * *")
+    @Scheduled(fixedRate = 60000 * 5)  // Cada minut
+//    @Scheduled(cron = "0 0 23 * * *")
     public void generateBackups() throws Exception {
 
         // Backup Core
